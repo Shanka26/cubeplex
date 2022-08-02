@@ -39,7 +39,7 @@ let menuButton={
 
 const menuStyle = {
     position: 'absolute',
-    width: '100%',
+    width: {xs:'100%',md:'30%'},
     height: '100%',
     backgroundColor: 'primary.light',
     
@@ -105,7 +105,7 @@ const Header = (
           </Grid>
 
           <Grid container item xs={8} md={4} justifyContent="center" alignItems='center'>
-            <Box onClick={()=>{navigate('/')}}>THIS IS TH LOGO</Box>
+            <Box onClick={()=>{navigate('/')}}>CUBEPLEX LOGO</Box>
           </Grid>
 
 
