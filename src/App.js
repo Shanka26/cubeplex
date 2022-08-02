@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
+import { Box } from '@mui/material';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import About from './pages/About'
+import Product from './pages/Product'
+import {CartProvider} from './context/CartContext'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+
+const theme = createTheme({
+  palette: {
+    primary:{
+      light:'#fff',
+      main:'#1c5080',
+      dark:'#333'
+    }
+  }
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+    <Box backgroundColor='primary.light' display='flex' flexDirection='column'>
+      <Router>
+        <CartProvider>
+          <Header/>
+          <Routes>
+          <Route exact path="/" element={<Home/>}/>
+          <Route exact path="/about" element={<About/>}/>
+          <Route exact path="/shop" element={<Product/>}/>
+          {/* <Route exact path="/products" element={<Products/>}/>
+          <Route exact path="/contact" element={<Contact/>}/> */}
+          </Routes>
+          <Footer/>
+        </CartProvider>
+    </Router>
+    
+    </Box>
+    </ThemeProvider>
   );
 }
 
