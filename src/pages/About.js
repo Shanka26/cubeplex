@@ -32,19 +32,19 @@ const About = () => {
     const sm_only = useMediaQuery(theme.breakpoints.only('sm'));
     
   return (
-    <Box display='flex' flexDirection={{xs:'column',lg:'row'}} justifyContent={{xs:"center",lg:'space-around'}} p={{xs:2,md:8}}>
-        <Box display='flex' justifyContent='center'><img src={spinImage} height={md_up?"650px":(xs_only?"310px":"500px")} /></Box>
+    <Box display='flex' flexDirection={{xs:'column',lg:'row'}} justifyContent={{xs:"center",lg:'space-around'}} p={{xs:2,md:4}}>
+        <Box display='flex' justifyContent='center' p={4}><img src={spinImage} height={md_up?"650px":(xs_only?"310px":"500px")} /></Box>
 
-        <Box display='flex' >
+        <Box display='flex' jus>
             
             <Grid container justifyContent='center'>
                 <Grid item xs={12} sx={{display: 'flex', justifyContent: 'center'}}>
-                    <Typography variant='h4' sx={{py:4}} align='center'>Enjoy exercising your brain</Typography>
+                    <Typography variant='h4' sx={{py:4,color:'primary.main'}} align='center'>Have fun while exercising your brain</Typography>
                 </Grid>
                 <Grid item xs={12} sm={6} sx={{display: 'flex', justifyContent: {xs:'center',md:'flex-end'},alignItems:'flex-end'}}>
                     <Box sx={{...featureStyle}}>
                         <img src={funIcon} height="64px"/>
-                        <Typography align='center'sx={textStyle}>Lots of fun</Typography>
+                        <Typography align='center'sx={textStyle}>Fun for all ages</Typography>
                     </Box>
                 </Grid>
 
