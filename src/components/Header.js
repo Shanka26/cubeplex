@@ -2,7 +2,7 @@ import React,{useState,useEffect,useContext} from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Box,Button,Grid,Typography,Stack,AppBar,Toolbar ,IconButton,Modal,Badge} from '@mui/material';
-// import logo from '../assets/logo/shenpop_logo.jpg'
+import logo from '../assets/Cube.png'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 
@@ -106,7 +106,10 @@ const Header = (
           </Grid>
 
           <Grid container item xs={8} md={4} justifyContent="center" alignItems='center'>
-            <Box onClick={()=>{navigate('/')}}>CUBEPLEX LOGO</Box>
+            
+            <Box onClick={()=>{navigate('/')}}>
+              <img src={logo} alt={'Cubeplec logo'} height="50px" />
+            </Box>
           </Grid>
 
 
