@@ -44,8 +44,9 @@ const menuStyle = {
     backgroundColor: 'primary.light',
     
     justifyContent:'center',
-    paddingTop:24,
-    display: 'flex',
+    alignItems:'flex-start',
+    // paddingTop:24,
+    // display: 'flex',
     marginBottom:12
    
   };
@@ -137,14 +138,16 @@ const Header = (
 
       >
         
-        <Box flexDirection='column' backgroundColor= 'primary.light'>
-          <Box display='flex' justifyContent="flex-end" >
-          <IconButton onClick={()=>{setMenuOpen(false)}} sx={{margin:4}}>
+        <Box flexDirection='column' backgroundColor= 'primary.light' sx={menuStyle}>
+          <Box display='flex' justifyContent="flex-end" alignItems='flex-start' height='20vh'>
+          <IconButton onClick={()=>{setMenuOpen(false)}} sx={{margin:1}}>
             <CloseIcon sx={{fontSize:40,color:'primary.dark'}}/>
           </IconButton>
         </Box>
-        <Box sx={menuStyle}>
-          <Stack sx={{position: 'absolute',top:'10%'}}>
+        <Box >
+          <Stack 
+          // sx={{position: 'absolute',top:'10%'}}
+          >
           <Button  sx={{...menuHead}} onClick={()=>{navigate('/');setMenuOpen(false)}}>Home</Button>
             <Button sx={{...menuHead}} onClick={()=>{navigate('/about');setMenuOpen(false)}}>About</Button>
             
@@ -167,10 +170,10 @@ const Header = (
         
         <Box flexDirection='column'  backgroundColor= 'rgba(0,0,0,.4)' sx={cartStyle}>
           <Box display='flex' justifyContent="flex-start"  height="8vh">
-          <IconButton onClick={()=>{setCartOpen(false)}} sx={{margin:1}}>
-            <ArrowBackOutlinedIcon sx={{fontSize:20,color:'#000',py:2}}/>
-          </IconButton>
-        </Box>
+            <IconButton onClick={()=>{setCartOpen(false)}} sx={{margin:1}}>
+              <ArrowBackOutlinedIcon sx={{fontSize:20,color:'#000',py:2}}/>
+            </IconButton>
+          </Box>
         <Box >
           <Cart/>
         </Box>
