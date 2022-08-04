@@ -58,8 +58,8 @@ const Cart = () => {
         const { error } = await stripe.redirectToCheckout({
           lineItems: stripeCart(),
           mode: 'payment',
-          successUrl: 'https://shenpop.netlify.app/',
-          cancelUrl: 'https://shenpop.netlify.app/',
+          successUrl: 'https://cubeplex.shop',
+          cancelUrl: 'https://cubeplex.shop',
           shippingAddressCollection: {
             allowedCountries: ['US'],
           }
