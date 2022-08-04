@@ -24,7 +24,7 @@ const headButton={
   }
   const menuHead={
     fontSize:40,
-    color:'primary.dark',
+    color:'primary.light',
     '&:hover':{
       color:'primary.main',
       backgroundColor:'primary.light'
@@ -41,7 +41,7 @@ const menuStyle = {
     position: 'absolute',
     width: {xs:'100%',md:'30%'},
     height: '100%',
-    backgroundColor: 'primary.light',
+    backgroundColor: 'primary.main',
     
     justifyContent:'center',
     alignItems:'flex-start',
@@ -144,7 +144,7 @@ const Header = (
         <Box flexDirection='column' backgroundColor= 'primary.light' sx={menuStyle}>
           <Box display='flex' justifyContent="flex-end" alignItems='flex-start' height='20vh'>
           <IconButton onClick={()=>{setMenuOpen(false)}} sx={{margin:1}}>
-            <CloseIcon sx={{fontSize:40,color:'primary.dark'}}/>
+            <CloseIcon sx={{fontSize:40,color:'primary.light'}}/>
           </IconButton>
         </Box>
         <Box >
