@@ -11,7 +11,7 @@ const CartItem = ({item,removeItem,upQuantity,downQuantity}) => {
     
   
     return (
-    <Grid  borderRadius={1} container display='flex' flexDirection='row' justifyContent='space-between'
+    <Grid  borderRadius={1} backgroundColor='#eef' container display='flex'  flexDirection='row' justifyContent='space-between'
      py={0} px={0} my={2}>
         <Grid item xs={6}>
             <Stack direction="row" p={2}>

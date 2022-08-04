@@ -172,7 +172,7 @@ const Header = (
       >
         
         <Box flexDirection='column'  backgroundColor= 'rgba(0,0,0,.4)' sx={cartStyle}>
-          <Box display='flex' justifyContent="flex-start"  height="8vh">
+          <Box display='flex' backgroundColor= 'primary.main'justifyContent="flex-start"  height="6vh">
             <IconButton onClick={()=>{setCartOpen(false)}} sx={{margin:1}}>
               <ArrowBackOutlinedIcon sx={{fontSize:20,color:'#000',py:2}}/>
             </IconButton>

@@ -26,7 +26,7 @@ const scrollBar = {
     }
 }
 const Cart = () => {
-    const stripePromise = loadStripe('pk_test_51LS2bhBGz49829C1HtmtZBUgl7Kl9Z3tjweJtdHhiyErVKikssJp8inmYBSHr0UUImABKvtTJP9TZJ13mRUaLDC400ujwgFDN9');
+    const stripePromise = loadStripe('pk_live_51LS2bhBGz49829C1SP1jrLJNMUwyMN2M4FE0n8ZwRVZuCk2yV4eUrl0gb6ktmdZUOUeihQXE6xatYSgje90oRH4e00tYre6l3D');
     let {cart,upQty,downQty,removeItem,cartTotal}= useContext(CartContext)
     let [total,setTotal]=useState(0);
     useEffect(()=>{
@@ -70,8 +70,8 @@ const Cart = () => {
       };
   
     return (
-    <Box height={{xs:'88vh',md:'91vh'}} pb={2} >
-      <Typography variant='h5' fontFamily='Edu VIC WA NT Beginner' sx={{px:2, pb:{xs:2,md:4}}}>Your Shopping Cart</Typography>
+    <Box height={{xs:'88vh',md:'88vh'}} pb={2} >
+      <Typography variant='h5' fontFamily='Edu VIC WA NT Beginner' sx={{p:2, pb:{xs:2,md:4}}}>Your Shopping Cart</Typography>
         <Box overflow='auto' height={{xs:.6,sm:.6,md:.70}} sx={{...scrollBar,borderBottomWidth:1,borderBottomStyle:'groove',borderColor:'#eee',mx:1}}>
           {cart==null?console.log('null'):console.log(cart)}
        { cart&&cart.map((item,i)=>{
@@ -90,7 +90,7 @@ const Cart = () => {
   style: 'currency',
   currency: 'USD',
 })}</Typography>
-            <Button variant='outlined'sx={{m:2}}disabled={cart&&cart.length===0} onClick={()=>{handleClick()}} >Checkout</Button></Box>
+            <Button variant='contained'sx={{m:2}}disabled={cart&&cart.length===0} onClick={()=>{handleClick()}} >Checkout</Button></Box>
         
     </Box>
   )
