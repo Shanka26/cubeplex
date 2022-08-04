@@ -21,6 +21,9 @@ const theme = createTheme({
       main:'#1c5080',
       dark:'#333'
     }
+  },
+  typography:{
+    fontFamily:'Nunito',
   }
 });
 

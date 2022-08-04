@@ -19,7 +19,7 @@ import {
 const headButton={
     fontSize:20,
     color:'primary.light',
-    fontFamily:'Edu VIC WA NT Beginner',
+    
     // fontWeight:700,
   }
   const menuHead={
@@ -53,9 +53,9 @@ const menuStyle = {
   const cartStyle = {
     position: 'absolute',
     right:'0%',
-    width: {xs:'100%',md:'40%',lg:'25%'},
+    width: {xs:'100%',sm:'50%',lg:'30%',xl:'25%'},
     height: '100%',
-    backgroundColor:'primary.light',
+    backgroundColor:'#eee'
     
    
   };
@@ -174,7 +174,7 @@ const Header = (
         <Box flexDirection='column'  backgroundColor= 'rgba(0,0,0,.4)' sx={cartStyle}>
           <Box display='flex' backgroundColor= 'primary.main'justifyContent="flex-start"  height="6vh">
             <IconButton onClick={()=>{setCartOpen(false)}} sx={{margin:1,color:'primary.light'}}>
-              <ArrowBackOutlinedIcon sx={{fontSize:20,color:'#000',py:2}}/>
+              <ArrowBackOutlinedIcon sx={{fontSize:20,py:2}}/>
             </IconButton>
           </Box>
         <Box >

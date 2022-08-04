@@ -70,9 +70,10 @@ const Cart = () => {
       };
   
     return (
-    <Box height={{xs:'88vh',md:'88vh'}} pb={2} >
-      <Typography variant='h5' fontFamily='Edu VIC WA NT Beginner' sx={{p:2, pb:{xs:2,md:4}}}>Your Shopping Cart</Typography>
-        <Box overflow='auto' height={{xs:.6,sm:.6,md:.70}} sx={{...scrollBar,borderBottomWidth:1,borderBottomStyle:'groove',borderColor:'#eee',mx:1}}>
+    <Box  pb={2}  >
+      <Typography variant='h5' sx={{p:2, pb:{xs:2,md:4}}}>Your Cart</Typography>
+      <Box height={{xs:'80vh',md:'80vh'}} display='flex' justifyContent='space-between' flexDirection='column'>
+        <Box overflow='auto'   height={{xs:.6,sm:.6,md:.70}} sx={{...scrollBar,borderBottomWidth:0,borderBottomStyle:'groove',borderColor:'#eee',mx:1}}>
           {cart==null?console.log('null'):console.log(cart)}
        { cart&&cart.map((item,i)=>{
          
@@ -86,12 +87,12 @@ const Cart = () => {
         })}
         </Box>
         <Box justifyContent='center'  display='flex' flexDirection='column' p={2}>
-            <Typography variant='h6' align='right' fontFamily='Edu VIC WA NT Beginner'>Total: {total.toLocaleString('en-US', {
+            <Typography variant='h6' align='right' >Total: {total.toLocaleString('en-US', {
   style: 'currency',
   currency: 'USD',
 })}</Typography>
             <Button variant='contained'sx={{m:2}}disabled={cart&&cart.length===0} onClick={()=>{handleClick()}} >Checkout</Button></Box>
-        
+            </Box>
     </Box>
   )
 }
