@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { Box } from '@mui/material';
 import {
   HashRouter as Router,
@@ -12,6 +12,7 @@ import About from './pages/About'
 import Product from './pages/Product'
 import {CartProvider} from './context/CartContext'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Slide from '@mui/material/Slide';
 
 
 const theme = createTheme({
@@ -28,24 +29,71 @@ const theme = createTheme({
 });
 
 function App() {
+  let[page,setPage]=useState(<Home/>)
+  let[checked,setChecked]=useState(true)
+  const [direction, setDirection] = React.useState('left');
+
+  let renderPage=(p)=>{
+    switch(p){
+      case 'shop':
+        setPage(<Product/>)
+        break;
+      case 'about':
+        setPage(<About/>)
+        break;
+      default:
+        setPage(<Home/>)
+        break;
+
+    }
+
+  }
+
+  useEffect(() => {
+    
+    
+  },[page])
+
+  let changePage = (p) => {
+    if(page!=p){
+    setChecked(false) 
+    setDirection('right')
+    setTimeout(()=>{
+      setChecked(true)
+      window.scrollTo(0, 0)
+      renderPage(p)
+      setDirection('left')
+    },300)
+  }
+  }
+
   return (
     <ThemeProvider theme={theme}>
+      <CartProvider>
     <Box backgroundColor='primary.light' display='flex' flexDirection='column'>
       <Router>
-        <CartProvider>
-          <Header/>
-          <Routes>
+        
+          <Header homePage={()=>{changePage('home')}} aboutPage={()=>{changePage('about')}} shopPage={()=>{changePage('shop')}}/>
+          {/* <Routes>
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/about" element={<About/>}/>
           <Route exact path="/shop" element={<Product/>}/>
-          {/* <Route exact path="/products" element={<Products/>}/>
-          <Route exact path="/contact" element={<Contact/>}/> */}
-          </Routes>
-          <Footer/>
-        </CartProvider>
+          
+          </Routes> */}
+          
+          <Slide direction={direction} in={checked} mountOnEnter 
+      //     onEntered={() => setDirection('right')}
+      // onExited={() => setDirection('left')}
+      >
+            <Box>{page}</Box>
+          
+        </Slide>
+          <Footer homePage={()=>{changePage('home')}} aboutPage={()=>{changePage('about')}} shopPage={()=>{changePage('shop')}}/>
+        
     </Router>
     
     </Box>
+    </CartProvider>
     </ThemeProvider>
   );
 }

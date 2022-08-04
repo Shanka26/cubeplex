@@ -64,7 +64,7 @@ const menuStyle = {
   
  
 const Header = (
-    // {menuOpen,setMenuOpen}
+    {homePage,aboutPage,shopPage}
     ) => {
     let [menuOpen,setMenuOpen]=useState(false)
     let [cartOpen,setCartOpen]=useState(false)
@@ -94,10 +94,10 @@ const Header = (
 
           <Grid container item xs={2} md={4} justifyContent="flex-start">
             <Stack gap={4} justifyContent='flex-end' sx={{flexDirection:'row',display:{xs:'none',lg:'flex'}}}>
-            <Button sx={headButton} onClick={()=>{navigate('/')}}>Home</Button>
-              <Button sx={headButton} onClick={()=>{navigate('/about')}}>About</Button>
+            <Button sx={headButton} onClick={homePage}>Home</Button>
+              <Button sx={headButton} onClick={aboutPage}>About</Button>
               
-              <Button sx={headButton}   onClick={()=>{navigate('/shop')}}>Shop</Button>
+              <Button sx={headButton}   onClick={shopPage}>Shop</Button>
               
             </Stack>
             <IconButton sx={{display:{xs:menuOpen?'none':'flex',lg:'none'}}}onClick={()=>{setMenuOpen(!menuOpen)}}>
@@ -151,10 +151,10 @@ const Header = (
           <Stack 
           // sx={{position: 'absolute',top:'10%'}}
           >
-          <Button  sx={{...menuHead}} onClick={()=>{navigate('/');setMenuOpen(false)}}>Home</Button>
-            <Button sx={{...menuHead}} onClick={()=>{navigate('/about');setMenuOpen(false)}}>About</Button>
+          <Button  sx={{...menuHead}} onClick={()=>{setMenuOpen(false);homePage()}}>Home</Button>
+            <Button sx={{...menuHead}} onClick={()=>{aboutPage();setMenuOpen(false)}}>About</Button>
             
-            <Button sx={{...menuHead}}  onClick={()=>{navigate('/shop');setMenuOpen(false)}}>Shop</Button>
+            <Button sx={{...menuHead}}  onClick={()=>{shopPage();setMenuOpen(false)}}>Shop</Button>
             
           </Stack>
         </Box>

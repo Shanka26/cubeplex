@@ -210,11 +210,11 @@ const Product = () => {
         </Box>
     </Box>
 
-    <Box sx={{border:2,m:8,mx:{xs:2,sm:4,md:16,lg:40}}}>
+    <Box sx={{border:1,m:8,mx:{xs:2,sm:4,md:16,lg:40}}}>
         <Stack>
             <Typography variant="h5" sx={{py:4,px:4}}>Customer Reviews</Typography>
             {reviews.map((r,i)=>(
-                <Box sx={{borderTop:2,mx:{xs:2,lg:4},p:2}} key={i}>
+                <Box sx={{borderTop:1,mx:{xs:2,lg:4},p:2}} key={i}>
                 <Stack gap={1}>
                     <img src={ratingImage} width="64px" style={{padding:4}}/>      
                     <Typography variant="body1" >{r.body}</Typography>

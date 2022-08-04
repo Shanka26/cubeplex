@@ -10,7 +10,7 @@ import {
     useNavigate
   } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({homePage,aboutPage,shopPage}) => {
     let navigate = useNavigate()
     
   return (
@@ -25,10 +25,12 @@ const Footer = () => {
                 <Box display='flex' width='100%' paddingBottom={2} justifyContent='space-between' >
                     <Box>
                         <Stack>
-                            <img src={logo} alt='cubeplex logo' height="50px"/>
+                            <img src={logo} alt='cubeplex logo' height="50px" onClick={homePage} sx={{color:'#eee'}}/>
                             <Stack direction='row' gap={2} justifyContent='center' padding={1}>
-                                <Typography variant='subtitle1' onClick={()=>{navigate('/about')}} sx={{color:'#eee'}}>About</Typography>
-                                <Typography variant='subtitle1' onClick={()=>{navigate('/shop')}} sx={{color:'#eee'}}>Shop</Typography>
+                                <Typography variant='subtitle1' onClick={homePage} sx={{color:'#eee'}}>Home</Typography>
+                                <Typography variant='subtitle1' onClick={aboutPage} sx={{color:'#eee'}}>About</Typography>
+                                <Typography variant='subtitle1' onClick={shopPage} sx={{color:'#eee'}}>Shop</Typography>
+                                
                                 
                                 
                             </Stack>

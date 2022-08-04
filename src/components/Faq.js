@@ -56,7 +56,7 @@ const Faq = ({questions}) => {
     <div>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>How big is the Cubeplex</Typography>
+          <Typography>How big is the Cubeplex?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -69,7 +69,7 @@ const Faq = ({questions}) => {
       </Accordion>
       <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>Whate ages are the Cubeplex for</Typography>
+          <Typography>Whate ages are the Cubeplex for?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
