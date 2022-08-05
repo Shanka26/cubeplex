@@ -161,6 +161,10 @@ const Product = () => {
                                 <AddIcon  sx={{fontSize:'35px','&:hover':{color:'primary.main'}}} onClick={()=>{setQty(qty+1)}}/>
                             </Box>
                         </Box>
+                        <Box>
+                            <Typography variant="body1" color="primary.main">Free Shipping!</Typography>
+                            <Typography variant="body1" color="primary.main">We do not accept returns at this time</Typography>
+                        </Box>
                         <Button sx={{m:4,mx:{xs:2,md:8,lg:12}}} variant='contained' onClick={add} >Add to cart </Button>
                     </Stack>
                     

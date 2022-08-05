@@ -25,7 +25,7 @@ const headText={
 
 
 
-const Home = () => {
+const Home = ({shopPage}) => {
   const theme = useTheme();
   const lg_up = useMediaQuery(theme.breakpoints.up('lg'));
   const xs_only = useMediaQuery(theme.breakpoints.only('xs'));
@@ -35,7 +35,6 @@ const Home = () => {
   const md_up = useMediaQuery(theme.breakpoints.up('md'));
   
  
-   const navigate=useNavigate()
   return (
     <Box >
       <Box borderRadius={0} p={4} backgroundColor='#1c5080'  display='flex' flexDirection={{xs:'column',md:'row'}} justifyContent="center">
@@ -103,7 +102,7 @@ const Home = () => {
         
         <Box justifyContent='center' display='flex' flexDirection='column' alignItems='center'>
           <Typography variant="h3" color="primary.dark" sx={headText} align='center'>Multiple colors to choose from</Typography>
-          <Button variant='contained' onClick={()=>{navigate('/shop')}} sx={{m:2}}> Shop Now</Button>
+          <Button variant='contained' onClick={shopPage} sx={{m:2}}> Shop Now</Button>
         </Box>
         
         

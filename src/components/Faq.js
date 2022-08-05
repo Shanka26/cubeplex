@@ -60,10 +60,7 @@ const Faq = ({questions}) => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+          11*10 cm/4.32*3.93inch(L*W).
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -73,23 +70,17 @@ const Faq = ({questions}) => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+            The Cubeplex provides fun for kids or all ages.
           </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>Collapsible Group Item #3</Typography>
+          <Typography>What material is The Cubeplex made of?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+            The Cubplex is mad of ABS plastic.
           </Typography>
         </AccordionDetails>
       </Accordion>

@@ -4,6 +4,9 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import logo from '../assets/Cube.png'
+import stripeBadge from '../assets/stripe-badge-grey.png'
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import {
 
@@ -11,7 +14,8 @@ import {
   } from "react-router-dom";
 
 const Footer = ({homePage,aboutPage,shopPage}) => {
-    let navigate = useNavigate()
+    const theme = useTheme();
+    const md_up = useMediaQuery(theme.breakpoints.up('md'));
     
   return (
     <AppBar  sx={{
@@ -22,7 +26,7 @@ const Footer = ({homePage,aboutPage,shopPage}) => {
         <Toolbar sx={{ my:{xs:4,lg:2},justifyContent: 'space-between', boxShadow:0,padding:2}}>
        
             <Box  display='flex' flexDirection='column' gap={1} width='100%' alignItems='center' justifyContent='center' >
-                <Box display='flex' width='100%' paddingBottom={2} justifyContent='space-between' >
+                <Box display='flex' flexDirection={{xs:'column',md:'row'}} width='100%' paddingBottom={2} justifyContent={{xs:'center',md:'space-between'}} >
                     <Box>
                         <Stack>
                             <img src={logo} alt='cubeplex logo' height="50px" onClick={homePage} sx={{color:'#eee'}}/>
@@ -34,12 +38,15 @@ const Footer = ({homePage,aboutPage,shopPage}) => {
                                 
                                 
                             </Stack>
+                            
                         </Stack>
+                      
                     </Box>
-
-                    <Box>
                        
+                    <Box display="flex" justifyContent='center' p={2}>
+                       <img src={stripeBadge} alt='checkout secured by stripe' width={md_up?'350px':'250px'} />
                     </Box>
+                    
                 </Box>
 
                 <Box  paddingTop={4}display='flex' width='100%' justifyContent='center'>

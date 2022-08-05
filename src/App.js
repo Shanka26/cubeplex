@@ -29,7 +29,7 @@ const theme = createTheme({
 });
 
 function App() {
-  let[page,setPage]=useState(<Home/>)
+  let[page,setPage]=useState(<Home shopPage={()=>{changePage('shop')}}/>)
   let[checked,setChecked]=useState(true)
   const [direction, setDirection] = React.useState('left');
 
@@ -42,7 +42,7 @@ function App() {
         setPage(<About/>)
         break;
       default:
-        setPage(<Home/>)
+        setPage(<Home shopPage={()=>{changePage('shop')}}/>)
         break;
 
     }
@@ -71,7 +71,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CartProvider>
     <Box backgroundColor='primary.light' display='flex' flexDirection='column'>
-      <Router>
+      {/* <Router> */}
         
           <Header homePage={()=>{changePage('home')}} aboutPage={()=>{changePage('about')}} shopPage={()=>{changePage('shop')}}/>
           {/* <Routes>
@@ -90,7 +90,7 @@ function App() {
         </Slide>
           <Footer homePage={()=>{changePage('home')}} aboutPage={()=>{changePage('about')}} shopPage={()=>{changePage('shop')}}/>
         
-    </Router>
+    {/* </Router> */}
     
     </Box>
     </CartProvider>

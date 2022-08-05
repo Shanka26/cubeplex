@@ -5,6 +5,7 @@ import { Box,Button,Grid,Typography,Stack,AppBar,Toolbar ,IconButton,Modal,Badge
 import logo from '../assets/Cube.png'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
+import Slide from '@mui/material/Slide';
 
 import Cart from '../pages/Cart'
 import CartContext from '../context/CartContext'
@@ -70,7 +71,7 @@ const Header = (
     let [cartOpen,setCartOpen]=useState(false)
     let [count,setCount]=useState(1)
     let {cart,cartCount}=useContext(CartContext)
-    let navigate = useNavigate()
+
 
 
     
@@ -107,8 +108,8 @@ const Header = (
 
           <Grid container item xs={8} md={4} justifyContent="center" alignItems='center'>
             
-            <Box onClick={()=>{navigate('/')}}>
-              <img src={logo} alt={'Cubeplec logo'} height="50px" />
+            <Box onClick={()=>{homePage()}}>
+              <img src={logo} alt={'Cubeplex logo'} height="50px" />
             </Box>
           </Grid>
 
@@ -140,7 +141,7 @@ const Header = (
         aria-describedby="modal-modal-description"
 
       >
-        
+        <Slide direction="right" in={menuOpen}  >
         <Box flexDirection='column' backgroundColor= 'primary.light' sx={menuStyle}>
           <Box display='flex' justifyContent="flex-end" alignItems='flex-start' height='20vh'>
           <IconButton onClick={()=>{setMenuOpen(false)}} sx={{margin:1}}>
@@ -159,10 +160,11 @@ const Header = (
           </Stack>
         </Box>
         </Box>
+        </Slide>
       </Modal>
 
 
-
+      
       <Modal
         open={cartOpen}
         onClose={()=>setCartOpen(false)}
@@ -170,7 +172,7 @@ const Header = (
         aria-describedby="modal-modal-description"
 
       >
-        
+        <Slide direction="left" in={cartOpen}  >
         <Box flexDirection='column'  backgroundColor= 'rgba(0,0,0,.4)' sx={cartStyle}>
           <Box display='flex' backgroundColor= 'primary.main'justifyContent="flex-start"  height="6vh">
             <IconButton onClick={()=>{setCartOpen(false)}} sx={{margin:1,color:'primary.light'}}>
@@ -181,7 +183,11 @@ const Header = (
           <Cart/>
         </Box>
         </Box>
+        </Slide>
+        
       </Modal>
+      
+      
       </AppBar>
   )
 }
